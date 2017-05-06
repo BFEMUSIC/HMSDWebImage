@@ -11,16 +11,14 @@
 #import "AFNetworking.h"
 #import "APPModel.h"
 #import "YYModel.h"
+#import "DownLoadManger.h"
+#import "UIImageView+loadImage.h"
 
 @interface ViewController ()
-
-@property (nonatomic,strong) NSOperationQueue *queue;
 
 @property (nonatomic,strong) NSArray *appList;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
-@property (nonatomic,strong) NSMutableDictionary *opCache;
 
 @property (nonatomic,copy) NSString *lastURL;
 @end
@@ -30,41 +28,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.queue = [NSOperationQueue new];
-    
-    self.opCache = [NSMutableDictionary new];
-    
     [self loadData];
     
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    
+    if(!self.appList)return;
+    
     int random = arc4random_uniform((uint32_t)self.appList.count);
     
     APPModel *model = self.appList[random];
     
-    if (![model.icon isEqualToString:self.lastURL] && self.lastURL != nil) {
-        
-        DownLoadOperation *op = [self.opCache valueForKey:self.lastURL];
-        
-        [op cancel];
-        
-        [self.opCache removeObjectForKey:self.lastURL];
-    }
+    [self.imageView loadImageWithURLStr:model.icon];
     
-    self.lastURL = model.icon;
-    
-    DownLoadOperation *op = [DownLoadOperation downLoadOperationWithURLStr:model.icon andFinishedBlock:^(UIImage *image) {
-        
-        self.imageView.image = image;
-        
-        [self.opCache removeObjectForKey:model.icon];
-    }];
-    
-    [self.opCache setObject:op forKey:model.icon];
-    
-    [self.queue addOperation:op];
+   
 }
 
 /// 获取数据的主方法 : 用于测试的数据,需要提前获取到

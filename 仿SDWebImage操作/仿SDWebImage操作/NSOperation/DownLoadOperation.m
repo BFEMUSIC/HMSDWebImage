@@ -35,7 +35,9 @@ typedef void(^TempBlock)(UIImage *);
 - (void)main
 {
     
-    NSLog(@"传入");
+    [NSThread sleepForTimeInterval:1.0];
+    
+    NSLog(@"传入 %@",self.urlStr);
     NSURL *url = [NSURL URLWithString:self.urlStr];
     
     NSData *data = [NSData dataWithContentsOfURL:url];
@@ -43,14 +45,19 @@ typedef void(^TempBlock)(UIImage *);
     UIImage *image = [UIImage imageWithData:data];
     
     if (self.cancelled == YES) {
-    NSLog(@"取消");
+    NSLog(@"取消 %@",self.urlStr);
         return;
+    }
+    
+    if (image) {
+        
+        [data writeToFile:[self.urlStr appendPath] atomically:YES];
     }
     
     if (_block) {
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            NSLog(@"完成");
+            NSLog(@"完成 %@",self.urlStr);
             _block(image);
         }];
     }

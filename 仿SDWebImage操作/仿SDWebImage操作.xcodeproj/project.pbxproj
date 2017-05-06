@@ -39,6 +39,9 @@
 		F15A97CB1EBDD24D00E6E5D8 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A97B11EBDD24D00E6E5D8 /* NSObject+YYModel.m */; };
 		F15A97CC1EBDD24D00E6E5D8 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A97B31EBDD24D00E6E5D8 /* YYClassInfo.m */; };
 		F15A97CF1EBDD25800E6E5D8 /* APPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A97CE1EBDD25800E6E5D8 /* APPModel.m */; };
+		F15A97D21EBDEDAF00E6E5D8 /* DownLoadManger.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A97D11EBDEDAF00E6E5D8 /* DownLoadManger.m */; };
+		F15A97D51EBDF2C500E6E5D8 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A97D41EBDF2C500E6E5D8 /* NSString+path.m */; };
+		F15A97D81EBDFB0500E6E5D8 /* UIImageView+loadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F15A97D71EBDFB0500E6E5D8 /* UIImageView+loadImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +110,12 @@
 		F15A97B41EBDD24D00E6E5D8 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		F15A97CD1EBDD25800E6E5D8 /* APPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPModel.h; sourceTree = "<group>"; };
 		F15A97CE1EBDD25800E6E5D8 /* APPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPModel.m; sourceTree = "<group>"; };
+		F15A97D01EBDEDAF00E6E5D8 /* DownLoadManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadManger.h; sourceTree = "<group>"; };
+		F15A97D11EBDEDAF00E6E5D8 /* DownLoadManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadManger.m; sourceTree = "<group>"; };
+		F15A97D31EBDF2C500E6E5D8 /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
+		F15A97D41EBDF2C500E6E5D8 /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
+		F15A97D61EBDFB0500E6E5D8 /* UIImageView+loadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+loadImage.h"; sourceTree = "<group>"; };
+		F15A97D71EBDFB0500E6E5D8 /* UIImageView+loadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+loadImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +178,12 @@
 			children = (
 				F15A977B1EBDCB9800E6E5D8 /* DownLoadOperation.h */,
 				F15A977C1EBDCB9800E6E5D8 /* DownLoadOperation.m */,
+				F15A97D01EBDEDAF00E6E5D8 /* DownLoadManger.h */,
+				F15A97D11EBDEDAF00E6E5D8 /* DownLoadManger.m */,
+				F15A97D31EBDF2C500E6E5D8 /* NSString+path.h */,
+				F15A97D41EBDF2C500E6E5D8 /* NSString+path.m */,
+				F15A97D61EBDFB0500E6E5D8 /* UIImageView+loadImage.h */,
+				F15A97D71EBDFB0500E6E5D8 /* UIImageView+loadImage.m */,
 			);
 			path = NSOperation;
 			sourceTree = "<group>";
@@ -327,11 +342,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F15A97CB1EBDD24D00E6E5D8 /* NSObject+YYModel.m in Sources */,
+				F15A97D21EBDEDAF00E6E5D8 /* DownLoadManger.m in Sources */,
 				F15A97B71EBDD24D00E6E5D8 /* AFSecurityPolicy.m in Sources */,
 				F15A97BB1EBDD24D00E6E5D8 /* MKAnnotationView+WebCache.m in Sources */,
 				F15A97B91EBDD24D00E6E5D8 /* AFURLResponseSerialization.m in Sources */,
 				F15A97C31EBDD24D00E6E5D8 /* SDWebImagePrefetcher.m in Sources */,
 				F15A97C21EBDD24D00E6E5D8 /* SDWebImageManager.m in Sources */,
+				F15A97D51EBDF2C500E6E5D8 /* NSString+path.m in Sources */,
 				F15A976B1EBDCB2200E6E5D8 /* ViewController.m in Sources */,
 				F15A97681EBDCB2200E6E5D8 /* AppDelegate.m in Sources */,
 				F15A97C91EBDD24D00E6E5D8 /* UIImageView+WebCache.m in Sources */,
@@ -352,6 +369,7 @@
 				F15A977D1EBDCB9800E6E5D8 /* DownLoadOperation.m in Sources */,
 				F15A97CF1EBDD25800E6E5D8 /* APPModel.m in Sources */,
 				F15A97BD1EBDD24D00E6E5D8 /* SDImageCache.m in Sources */,
+				F15A97D81EBDFB0500E6E5D8 /* UIImageView+loadImage.m in Sources */,
 				F15A97C41EBDD24D00E6E5D8 /* UIButton+WebCache.m in Sources */,
 				F15A97BC1EBDD24D00E6E5D8 /* NSData+ImageContentType.m in Sources */,
 				F15A97B81EBDD24D00E6E5D8 /* AFURLRequestSerialization.m in Sources */,
